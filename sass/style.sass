@@ -1,0 +1,238 @@
+// ============================
+// IMPORTS
+// ============================
+
+@import "option"
+@import "default"
+@import "fonts"
+
+// ============================
+// MAIN STYLES
+// ============================
+
+body
+    background-color: $grey
+
+.header
+    padding: 28px 0
+    &__menu
+        position: absolute
+        margin-left: 24px
+        cursor: pointer
+        background-image: url("../img/lang-button.png")
+        width: 38px
+        height: 38px
+
+.lang
+    &__menu
+        height: 38px
+        width: fit-content
+        align-items: center
+        left: 66px
+        position: absolute
+        display: none
+        &.active
+            display: flex   
+    &__list
+        display: flex
+        align-item: center
+    &__item
+        margin: 0 8px
+        font-family: "Grtsk-Tera"
+        font-size: 10px
+        font-weight: 400
+        line-height: 140%
+        color: #D3D3D3
+        &:hover
+            color: #fff
+
+.logo
+    font-family: "Grtsk-Tera"
+    font-style: normal
+    font-weight: 600
+    font-size: 28px
+    text-transform: uppercase
+    color: #000
+    margin: 1.5px auto 1.5px
+    text-align: center
+    &:hover
+        color: transparent
+        cursor: pointer
+        -webkit-text-stroke: 1px #000
+
+.container
+    margin: 50px 0 96px 0
+    display: flex
+    justify-content: center
+    align-items: center
+    
+.backgroud-ellipse
+    width: 578px
+    height: 578px
+    background: $orange
+    filter: blur(50px)
+    border-radius: 50%
+
+.diagonal-lines
+    position: absolute
+    z-index: -1
+    transform: rotate(-30deg)
+    width: 110%
+    &__item
+        font-family: "Grtsk-Tera"
+        font-weight: 700
+        font-style: italic
+        font-size: 52px
+        line-height: 110%
+        text-transform: uppercase
+        color: transparent
+        -webkit-text-stroke: 1px $dark-grey
+        opacity: 0.1
+        overflow: hidden
+        &:first-child
+            transform: rotate(180deg)
+
+.wrap
+    position: absolute
+    text-align: center
+
+.main-text
+    font-family: "Grtsk-Tera"
+    font-style: normal
+    font-weight: 700
+    font-size: 82px
+    line-height: 110%
+    text-transform: uppercase
+    color: $dark-grey
+    cursor: default
+
+.button
+    position: absolute
+    width: 118px
+    height: 118px
+    align-self: flex-end
+    margin: 0 23px 23px 437px
+
+.questions
+    font-family: "Grtsk-Tera"
+    font-size: 16px
+    line-height: 140%
+    color: $dark-grey
+    text-align: center
+    &-where
+        position: absolute
+        transform: rotate(-90deg)
+        top: 50%
+    &-who
+        margin: 0 0 19px 0
+    &-what
+        top: 50%
+        right: 0
+        position: absolute
+        transform: rotate(90deg)
+    &:hover
+        font-family: "Bkslnt-Tera"
+        color: #fff
+        text-decoration: underline
+        cursor: pointer
+
+//=============================
+// ANIMATION
+//=============================
+
+.button 
+    animation: 15s linear 0s normal none infinite running rot
+    -webkit-animation: 15s linear 0s normal none infinite running rot
+
+@keyframes rot
+    0% 
+        transform: rotate(0deg)
+  
+    100%
+        transform: rotate(360deg)
+  
+
+@-webkit-keyframes rot 
+    0% 
+        transform: rotate(0deg)
+  
+    100%
+        transform: rotate(360deg)
+  
+
+
+//=============================
+// MEDIA
+//=============================
+
+@media ( max-width: 1024px )
+    .header__menu
+        width: 34px
+        height: 34px
+    .logo
+        font-size: 24px
+    .container
+        margin: 70px 0 96px 0
+    .diagonal-lines
+        width: 100%
+        transform: rotate(-33.61deg)
+    .backgroud-ellipse
+        width: 482px
+        height: 482px
+    .main-text
+        font-size: 58px
+    .button
+        width: 112px
+        height: 112px
+    .questions
+        font-size: 14px
+
+@media ( max-width: 786px )
+    .container
+        margin: 198px 0 224px 0
+    .diagonal-lines
+        width: 140%
+        transform: rotate(-50.61deg)
+    .main-text
+        font-size: 58px
+        width: 568px
+        line-height: 110%
+
+@media ( max-width: 414px )
+    .logo
+        font-size: 20px
+    .container
+        margin: 138px 0 221px 0
+    .diagonal-lines
+        display: none
+    .backgroud-ellipse
+        width: 294px
+        height: 294px
+    .main-text
+        width: 353px
+        line-height: 110%
+        font-size: 36px
+    .button
+        width: 90px
+        height: 90px
+        margin: 0 83px -23px 241px
+    .questions
+        display: none
+
+@media ( max-width: 375px )
+    .logo
+        font-size: 18px
+    .container
+        margin: 94px 0 186px 0
+    .diagonal-lines
+        display: none
+    .main-text
+        width: 333px
+        line-height: 110%
+        font-size: 34px
+    .button
+        width: 90px
+        height: 90px
+        margin: 0 83px -23px 241px
+    .questions
+        display: none
